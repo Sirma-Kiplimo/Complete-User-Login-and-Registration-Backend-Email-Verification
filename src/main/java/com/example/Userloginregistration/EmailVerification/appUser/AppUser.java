@@ -19,27 +19,26 @@ import java.util.Collections;
 @Entity
 public class AppUser implements UserDetails {
 
-    @Id
+
     @SequenceGenerator(
             name = "student_sequence",
             sequenceName = "student_sequence",
             allocationSize = 1
     )
+    @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "student_sequence"
     )
     private Long id;
-    @Column(name = "firstName")
     private String firstName;
-    @Column(name = "lastName")
     private String lastName;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
     private Boolean locked = false;
-    private  Boolean enabled = false;
+    private Boolean enabled = false;
 
     public AppUser(String firstName,
                    String lastName,
@@ -51,7 +50,6 @@ public class AppUser implements UserDetails {
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
-
     }
 
     @Override

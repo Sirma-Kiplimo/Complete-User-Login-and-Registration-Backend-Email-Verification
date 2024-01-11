@@ -54,12 +54,13 @@ public class RegistrationService {
 
         if (confirmationToken.getConfirmedAt() != null) {
             throw new IllegalStateException("email already confirmed");
+//            return "email already confirmed";
         }
 
         LocalDateTime expiredAt = confirmationToken.getExpiresAt();
 
         if (expiredAt.isBefore(LocalDateTime.now())) {
-            throw new IllegalStateException("token expired");
+            return "token expired";
         }
 
         confirmationTokenService.setConfirmedAt(token);
