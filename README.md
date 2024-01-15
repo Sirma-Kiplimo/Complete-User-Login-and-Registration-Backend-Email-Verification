@@ -24,7 +24,7 @@ Complete login registration backend system using Spring Boot.
 curl --location --request POST 'localhost:8080/api/v1/registration' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "firstName": "kevin",
+    "firstName": "Kevin",
     "lastName": "Sirma",
     "email": "kevin.sirma@gmail.com",
     "password": "password"
